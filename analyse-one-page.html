@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рынок коучинга и телесных практик в России</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --text-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-color);
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            margin: 20px 0 10px;
+        }
+        
+        .highlight {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 20px;
+            text-align: center;
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        .trends-list {
+            list-style-type: none;
+        }
+        
+        .trends-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-color);
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .trends-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .competitor-category {
+            margin-bottom: 30px;
+        }
+        
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .price-table th, .price-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-color);
+        }
+        
+        .price-table th {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+        }
+        
+        .price-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .swot-item {
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .strengths {
+            border-top: 4px solid #2ecc71;
+        }
+        
+        .weaknesses {
+            border-top: 4px solid #e74c3c;
+        }
+        
+        .opportunities {
+            border-top: 4px solid #3498db;
+        }
+        
+        .threats {
+            border-top: 4px solid #f39c12;
+        }
+        
+        .swot-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .conclusion {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin: 40px 0;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .swot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Рынок коучинга и телесных практик в России</h1>
+            <p class="subtitle">Анализ роста, конкурентной среды и перспектив для нишевых игроков</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section>
+            <h2>Ключевые показатели рынка</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">25%</div>
+                    <div class="stat-label">Рост спроса на коучинг за 2 года</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3-4 млрд ₽</div>
+                    <div class="stat-label">Годовой объем рынка</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">15-20%</div>
+                    <div class="stat-label">Ежегодный рост рынка</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">10 000+</div>
+                    <div class="stat-label">Коучей в России</div>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <p>Особенность российского рынка: 59% клиентов коучей — владельцы малого бизнеса или микропредприятий. В отличие от западных стран, где коучинг чаще берут крупные корпорации.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Основные ниши коучинга</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">~40%</div>
+                    <div class="stat-label">Бизнес-коучинг</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">~35%</div>
+                    <div class="stat-label">Карьерный и лайф-коучинг</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">~25%</div>
+                    <div class="stat-label">Коучинг для предпринимателей</div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Ключевые тренды рынка</h2>
+            <ul class="trends-list">
+                <li>Возросший акцент на психическом здоровье и телесно-ориентированных методиках</li>
+                <li>Запрос на эксклюзивный опыт (консьерж-сервис, приватность) среди обеспеченных клиентов</li>
+                <li>Появление гибридных форматов (сопровождение между офлайн-сессиями через онлайн)</li>
+                <li>Интеграция тела и психики: пост-ковидный бум интереса к соматике, дыханию и единоборствам</li>
+                <li>Рост премиального сегмента благополучия</li>
+                <li>Корпоративное внимание к wellbeing</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Конкурентный ландшафт</h2>
+            
+            <div class="competitor-category">
+                <h3>Лайф-коучи и бизнес-коучи</h3>
+                <p>От известных VIP-наставников для топ-менеджеров до массовых мотивационных спикеров.</p>
+                <p>Ценовой диапазон: 5-150 тыс. ₽ за сессию</p>
+            </div>
+            
+            <div class="competitor-category">
+                <h3>Соматические и embodiment-коучи</h3>
+                <p>Интегрируют работу с телом и эмоциями. Ценовой диапазон: 3-12 тыс. ₽ за сессию</p>
+            </div>
+            
+            <div class="competitor-category">
+                <h3>Фасилитаторы дыхательных практик и майндфулнесс</h3>
+                <p>Групповые и индивидуальные сессии дыхательных практик. Ценовой диапазон: 3-5 тыс. ₽ за групповую сессию</p>
+            </div>
+            
+            <div class="competitor-category">
+                <h3>Телесные тренеры высокого класса</h3>
+                <p>Персональные фитнес-тренеры с VIP-сервисом. Ценовой диапазон: 5-10 тыс. ₽ за сессию</p>
+            </div>
+            
+            <div class="competitor-category">
+                <h3>Боксовые студии и терапия через удар</h3>
+                <p>Бокс и боевые практики для снятия стресса. Ценовой диапазон: 1-5 тыс. ₽ за тренировку</p>
+            </div>
+            
+            <div class="competitor-category">
+                <h3>Wellness-ретриты</h3>
+                <p>Духовно-телесные интенсивы, часто загородом. Ценовой диапазон: 10-100 тыс. ₽ за уикенд</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Ценовые ориентиры</h2>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Услуга</th>
+                        <th>Ценовой диапазон</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Стандартная частная коуч-сессия</td>
+                        <td>5–15 тыс. ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Групповой ретрит на выходные</td>
+                        <td>10–50 тыс. ₽/чел</td>
+                    </tr>
+                    <tr>
+                        <td>VIP-коучинг</td>
+                        <td>20–150 тыс. ₽ за сессию</td>
+                    </tr>
+                    <tr>
+                        <td>Эмоционально-образный бокс (Микаел)</td>
+                        <td>~20 тыс. ₽ за 90 мин</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section>
+            <h2>SWOT-анализ рынка</h2>
+            <div class="swot-grid">
+                <div class="swot-item strengths">
+                    <div class="swot-title">Сильные стороны рынка</div>
+                    <ul>
+                        <li>Растущий спрос на услуги ментального благополучия</li>
+                        <li>Высокая маржинальность услуг (70-90%)</li>
+                        <li>Гибкость и возможность нишевания</li>
+                    </ul>
+                </div>
+                
+                <div class="swot-item weaknesses">
+                    <div class="swot-title">Слабые стороны рынка</div>
+                    <ul>
+                        <li>Низкая регуляция, много дилетантов</li>
+                        <li>Скептицизм части целевой аудитории</li>
+                        <li>Ограниченность масштаба (привязанность к личности специалиста)</li>
+                    </ul>
+                </div>
+                
+                <div class="swot-item opportunities">
+                    <div class="swot-title">Возможности</div>
+                    <ul>
+                        <li>Незанятые ниши (телесный коучинг для мужчин-руководителей)</li>
+                        <li>Корпоративный сегмент</li>
+                        <li>VIP upsell (создание эксклюзивных продуктов)</li>
+                    </ul>
+                </div>
+                
+                <div class="swot-item threats">
+                    <div class="swot-title">Угрозы</div>
+                    <ul>
+                        <li>Экономическая нестабильность</li>
+                        <li>Копирование крупными игроками</li>
+                        <li>Регуляторные риски</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Рекомендации для нишевых игроков</h2>
+            <div class="highlight">
+                <p>Рынок благоприятен для игроков с уникальным оффером при условии грамотной упаковки VIP-сервиса, безупречной этики и адресного маркетинга на платежеспособную аудиторию.</p>
+            </div>
+            
+            <h3>Ключевые направления для дифференциации:</h3>
+            <ul class="trends-list">
+                <li>Уникальная методика физического катарсиса</li>
+                <li>Акцент на интеграции телесных практик и психологической работы</li>
+                <li>Создание эксклюзивного VIP-опыта с white-glove сервисом</li>
+                <li>Партнерства с медицинскими и психологическими центрами</li>
+                <li>Разработка гибридных форматов (офлайн + онлайн сопровождение)</li>
+            </ul>
+        </section>
+        
+        <div class="conclusion">
+            <h2>Вывод</h2>
+            <p>Российский рынок персонального коучинга и телесно-эмоциональных практик демонстрирует устойчивый рост и открывает возможности для нишевых игроков с уникальными методиками. Ключевыми факторами успеха являются:</p>
+            <ul style="margin-top: 15px; margin-left: 20px;">
+                <li>Четкое позиционирование в премиум-сегменте</li>
+                <li>Уникальное ценностное предложение на стыке коучинга и телесных практик</li>
+                <li>Безупречный сервис и конфиденциальность для VIP-клиентов</li>
+                <li>Стратегия маркетинга, ориентированная на сарафанное радио и целевые каналы</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Анализ рынка коучинга и телесно-эмоциональных практик в России</p>
+        </div>
+    </footer>
+</body>
+</html>
